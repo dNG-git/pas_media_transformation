@@ -1,0 +1,2 @@
+-e git+http://git.direct-netware.de/pas/file_store/#egg=pas_file_store
+-e git+http://git.direct-netware.de/pas/media/#egg=pas_media
