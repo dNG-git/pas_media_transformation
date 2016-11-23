@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-##j## BOF
 
 """
 direct PAS
@@ -35,14 +34,12 @@ https://www.direct-netware.de/redirect?licenses;gpl
 
 try: from urllib.parse import parse_qsl, urlencode
 except ImportError:
-#
-	from urllib import urlencode
-	from urlparse import parse_qsl
+    from urllib import urlencode
+    from urlparse import parse_qsl
 #
 
 class MediaTransformationDataMixin(object):
-#
-	"""
+    """
 The "MediaTransformationDataMixin" provides static methods to de- and encode
 transformation query strings.
 
@@ -53,12 +50,11 @@ transformation query strings.
 :since:      v0.1.00
 :license:    https://www.direct-netware.de/redirect?licenses;gpl
              GNU General Public License 2
-	"""
+    """
 
-	@staticmethod
-	def get_transformation_data(transformation_query_string):
-	#
-		"""
+    @staticmethod
+    def get_transformation_data(transformation_query_string):
+        """
 Returns a dictionary of transformation data defined by the encoded query
 string given.
 
@@ -67,27 +63,24 @@ string given.
 
 :return: (dict) Transformation data dictionary
 :since:  v0.1.00
-		"""
+        """
 
-		return dict(parse_qsl(transformation_query_string))
-	#
+        return dict(parse_qsl(transformation_query_string))
+    #
 
-	@staticmethod
-	def get_transformation_query_string(transformation_data):
-	#
-		"""
+    @staticmethod
+    def get_transformation_query_string(transformation_data):
+        """
 Returns a sorted encoded query string defining the transformation data
 given as a dictionary.
 
 :return: (str) Encoded query string with transformation data
 :since:  v0.1.00
-		"""
+        """
 
-		transformation_keys = list(transformation_data.keys())
-		transformation_keys.sort()
+        transformation_keys = list(transformation_data.keys())
+        transformation_keys.sort()
 
-		return urlencode([ ( key, transformation_data[key] ) for key in transformation_keys ])
-	#
+        return urlencode([ ( key, transformation_data[key] ) for key in transformation_keys ])
+    #
 #
-
-##j## EOF
