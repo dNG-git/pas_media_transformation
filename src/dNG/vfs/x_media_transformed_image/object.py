@@ -30,7 +30,7 @@ https://www.direct-netware.de/redirect?licenses;gpl
 #echo(__FILEPATH__)#
 """
 
-# pylint: disable=unused-argument
+# pylint: disable=import-error, no-name-in-module
 
 try: from urllib.parse import quote, unquote, urlsplit
 except ImportError:
@@ -62,6 +62,8 @@ Provides the VFS implementation for 'x-media-transformed-image' objects.
 :license:    https://www.direct-netware.de/redirect?licenses;gpl
              GNU General Public License 2
     """
+
+    # pylint: disable=unused-argument
 
     _FILE_WRAPPED_METHODS = ( "close",
                               "get_size",
@@ -177,6 +179,8 @@ Returns the type of this object.
 :return: (int) Object type
 :since:  v0.1.00
         """
+
+        # pylint: disable=no-member
 
         if (self._wrapped_resource is None): raise IOException("VFS object not opened")
         return Object.TYPE_FILE
